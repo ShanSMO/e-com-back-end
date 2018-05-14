@@ -1,17 +1,17 @@
--- drop table if exists oauth_client_details;
--- create table oauth_client_details (
---   client_id VARCHAR(255) PRIMARY KEY,
---   resource_ids VARCHAR(255),
---   client_secret VARCHAR(255),
---   scope VARCHAR(255),
---   authorized_grant_types VARCHAR(255),
---   web_server_redirect_uri VARCHAR(255),
---   authorities VARCHAR(255),
---   access_token_validity INTEGER,
---   refresh_token_validity INTEGER,
---   additional_information VARCHAR(4096),
---   autoapprove VARCHAR(255)
--- );
+drop table if exists oauth_client_details;
+create table oauth_client_details (
+  client_id VARCHAR(255) PRIMARY KEY,
+  resource_ids VARCHAR(255),
+  client_secret VARCHAR(255),
+  scope VARCHAR(255),
+  authorized_grant_types VARCHAR(255),
+  web_server_redirect_uri VARCHAR(255),
+  authorities VARCHAR(255),
+  access_token_validity INTEGER,
+  refresh_token_validity INTEGER,
+  additional_information VARCHAR(4096),
+  autoapprove VARCHAR(255)
+);
 --
 -- drop table if exists oauth_client_token;
 -- create table oauth_client_token (
@@ -70,9 +70,9 @@
 --   autoApproveScopes VARCHAR(255)
 -- );
 
-INSERT INTO `tbl_user_role` (`role_name`) VALUES ('SUPER_USER');
-INSERT INTO `tbl_user_role` (`role_name`) VALUES ('ADMINISTRATOR');
-INSERT INTO `tbl_user_role` (`role_name`) VALUES ('OWNER');
-INSERT INTO `tbl_user_role` (`role_name`) VALUES ('AGENT');
-INSERT INTO `tbl_user_role` (`role_name`) VALUES ('STAFF');
-INSERT INTO `tbl_user_role` (`role_name`) VALUES ('CUSTOMER');
+-- INSERT INTO `tbl_user_role` (`role_name`) VALUES ('SUPER_USER');
+-- INSERT INTO `tbl_user_role` (`role_name`) VALUES ('ADMINISTRATOR');
+-- INSERT INTO `tbl_user_role` (`role_name`) VALUES ('OWNER');
+-- INSERT INTO `tbl_user_role` (`role_name`) VALUES ('AGENT');
+-- INSERT INTO `tbl_user_role` (`role_name`) VALUES ('STAFF');
+-- INSERT INTO `tbl_user_role` (`role_name`) VALUES ('CUSTOMER');

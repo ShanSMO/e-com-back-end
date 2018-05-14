@@ -152,7 +152,7 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>2.4</version>
                     <configuration>
-                        <outputDirectory>\opt\apache-tomcat-9.0.8\apache-tomcat-9.0.8\webapps\app</outputDirectory>
+                        <outputDirectory>C:\Users\Shan-O\Desktop\Tomcat Server\apache-tomcat-8.5.0\webapps\e-com</outputDirectory>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                 </plugin>

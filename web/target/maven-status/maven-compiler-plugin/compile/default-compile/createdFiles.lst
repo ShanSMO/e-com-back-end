@@ -1,5 +1,5 @@
-RequestObjects/RequestObject.class
-Configuration/WebConfiguration.class
-Configuration/RootConfiguration.class
-ResponseObjects/ResponseObject.class
-Configuration/ConfigInit.class
+Configuration\ConfigInit.class
+Configuration\WebConfiguration.class
+Configuration\RootConfiguration.class
+RequestObjects\RequestObject.class
+ResponseObjects\ResponseObject.class

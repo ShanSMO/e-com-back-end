@@ -1,4 +1,4 @@
-ServiceResponses/ServiceResponse.class
-Configurations/DozerConfiguration$1.class
-Schedules/EmailScheduler.class
-Configurations/DozerConfiguration.class
+Configurations\DozerConfiguration$1.class
+Schedules\EmailScheduler.class
+Configurations\DozerConfiguration.class
+ServiceResponses\ServiceResponse.class
