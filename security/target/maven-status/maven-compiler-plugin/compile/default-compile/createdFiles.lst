@@ -1,4 +1,4 @@
-Configuration\AuthorizationServerConfiguration.class
-Configuration\DataSourceConfiguration.class
-Configuration\ResourceServerConfiguration.class
-Configuration\SecurityConfiguration.class
+Configuration/SecurityConfiguration.class
+Configuration/AuthorizationServerConfiguration.class
+Configuration/ResourceServerConfiguration.class
+Configuration/DataSourceConfiguration.class
