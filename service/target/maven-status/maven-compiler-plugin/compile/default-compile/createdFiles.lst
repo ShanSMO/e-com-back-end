@@ -2,3 +2,5 @@ Configurations\DozerConfiguration$1.class
 Schedules\EmailScheduler.class
 Configurations\DozerConfiguration.class
 ServiceResponses\ServiceResponse.class
+Services\UserService.class
+ServiceImpl\UserServiceImpl.class

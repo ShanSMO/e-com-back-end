@@ -17,6 +17,7 @@ public class ServiceResponse  implements Serializable{
     private List<?> objects ;
     private boolean status;
     private String message;
+    private String errorCode;
     private int recordCount;
 
     public boolean isStatus() {
@@ -61,5 +62,13 @@ public class ServiceResponse  implements Serializable{
 
     public void setRecordCount(int recordCount) {
         this.recordCount = recordCount;
+    }
+
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 }

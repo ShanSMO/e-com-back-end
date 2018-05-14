@@ -25,7 +25,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
     @ComponentScan("Schedules")})
 @EnableWebMvc
 @EnableSpringDataWebSupport
-@Import({EmailConfiguration.class, ORMConfiguration.class , DozerConfiguration.class })
+@Import({EmailConfiguration.class, ORMConfiguration.class , DozerConfiguration.class, SecurityConfiguration.class })
 //, DataSourceConfiguration.class
 public class RootConfiguration {
 

@@ -1,2 +1,4 @@
-Entities\User.class
 Configurations\ORMConfiguration.class
+Repositories\UserRepository.class
+Entities\User.class
+Dtos\UserDto.class

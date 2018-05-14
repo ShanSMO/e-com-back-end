@@ -1,6 +1,7 @@
 package Services;
 
 import Dtos.UserDto;
+import ServiceResponses.ServiceResponse;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -15,4 +16,5 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UserService {
 
     void createUser(UserDto userDto);
+    ServiceResponse userLogin (UserDto userDto);
 }
