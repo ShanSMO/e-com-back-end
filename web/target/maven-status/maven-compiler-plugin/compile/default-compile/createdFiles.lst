@@ -1,0 +1,15 @@
+WebService\UserRestController.class
+Configuration\ConfigInit.class
+Configuration\WebConfiguration.class
+Configuration\RootConfiguration.class
+WebService\DeviceController.class
+WebService\StaffController.class
+ResponseObjects\ResponseObject.class
+WebService\BusinessOwnerRestController.class
+WebService\VehicleRestController.class
+WebService\LocationController.class
+WebService\CompanyRestController.class
+RequestObjects\RequestObject.class
+WebService\AgentRestController.class
+WebService\UserRoleController.class
+WebService\SupplierRestController.class

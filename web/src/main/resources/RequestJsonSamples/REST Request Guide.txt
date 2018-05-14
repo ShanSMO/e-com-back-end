@@ -1,0 +1,74 @@
+------------ User -----------
+
+>> Create User
+
+    {
+        "userName":"madushanka991@gmail.com",
+        "password":"1123",
+        "userType":"OWNER"
+    }
+
+
+
+------------ Business Owner ---
+>> Create Business Owner
+
+    {
+        "firstName":"Shanaka",
+        "lastName":"Madushanka",
+        "emailAddress":"madushanka991@gmail.com",
+        "nicNumber":"920491553v",
+        "mobileNumber":"0766254532",
+        "fixedNumber":"0766254532",
+        "company":null,
+        "user":{
+            "id":1
+        },
+        "address":{
+            "houseNumber":"No : 120",
+            "street":"Keenagasmanana",
+            "city":"Dodangoda",
+            "zipCode":"12020"
+        }
+    }
+
+--------------- Company ------
+>> Create Company
+
+   {
+   	"companyName": "Deniyaya Tea Factory",
+   	"contactNumber":"0766254532",
+   	"owner":{
+   		"id":2
+   	},
+   	"email":"madushanka991@gmail.com"
+
+   }
+
+
+-------------- Agent -----------
+>> Create Agent
+
+   {
+   	"agentFirstName":"Test Agent",
+   	"agentLastName":"Test Last Name",
+   	"companies":[{
+   		"id":2
+   	},
+   	{
+   		"id":3
+   	}]
+   }
+
+-------------- Supplier ---------
+>> Create Supplier
+
+    {
+        "firstName":"Test",
+        "lastName":"Supplier",
+        "email":"madushanka991@gmail.com",
+        "contactNumber":"0766254532",
+        "company":{
+            "id":2
+        }
+    }
