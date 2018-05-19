@@ -1,6 +1,11 @@
 package Configurations;
 
+import Dtos.CategoryDto;
+import Dtos.ProductDto;
+import Entities.Category;
+import Entities.Product;
 import org.dozer.DozerBeanMapper;
+import org.dozer.loader.DozerBuilder;
 import org.dozer.loader.api.BeanMappingBuilder;
 import org.dozer.loader.api.TypeMappingOptions;
 import org.springframework.context.annotation.Bean;
@@ -32,7 +37,8 @@ public class DozerConfiguration{
         return new BeanMappingBuilder() {
             @Override
             protected void configure() {
-
+                  mapping(Category.class, CategoryDto.class, mapId("CAT_EXCLUDE_PRODUCT"), mapNull()).exclude("product");
+                  mapping(Product.class, ProductDto.class, mapId("PRODUCT_EXCLUDE_CAT"), mapNull()).exclude("category");
 
             }
         };

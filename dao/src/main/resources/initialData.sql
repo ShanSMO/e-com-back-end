@@ -1,0 +1,1 @@
+INSERT INTO 'tbl_category' VALUES (null, 'Photo Copy');
