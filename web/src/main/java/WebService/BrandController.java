@@ -1,33 +1,35 @@
 package WebService;
 
-import Dtos.PhotoCopyDto;
+import Dtos.BrandDto;
 import ServiceResponses.ServiceResponse;
-import Services.PhotoCopyService;
+import Services.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.ws.Service;
+
 /**
  * Created by Shanaka Madushanka .
- * Created Date -  5/18/2018
- * Created Time -  10:18 PM
+ * Created Date -  5/19/2018
+ * Created Time -  12:26 PM
  * Project Name - e-com-back-end
  * Package Name - WebService
  */
 @RestController
-@RequestMapping(value = "photo-copy")
+@RequestMapping(value = "brand")
 @CrossOrigin("*")
-public class PhotoCopyController {
+public class BrandController {
 
     @Autowired
-    PhotoCopyService photoCopyService;
+    BrandService brandService;
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
-    public ServiceResponse create(@RequestBody PhotoCopyDto photoCopyDto) {
-        return photoCopyService.create(photoCopyDto);
+    public ServiceResponse create(@RequestBody BrandDto brandDto) {
+        return brandService.create(brandDto);
     }
 
     @RequestMapping(value = "load-all", method = RequestMethod.GET)
-    public ServiceResponse loadSavedAll() {
-        return photoCopyService.loadAll();
+    public ServiceResponse loadAll() {
+        return brandService.loadAll();
     }
 }

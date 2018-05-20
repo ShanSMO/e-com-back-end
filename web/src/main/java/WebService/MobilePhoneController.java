@@ -1,5 +1,13 @@
 package WebService;
 
+import Dtos.MobilePhoneDto;
+import Entities.MobilePhone;
+import ServiceResponses.ServiceResponse;
+import Services.MobilePhoneService;
+import org.dozer.DozerBeanMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 /**
  * Created by Shanaka Madushanka .
  * Created Date -  5/18/2018
@@ -8,5 +16,29 @@ package WebService;
  * Package Name - WebService
  */
 
+@RestController
+@RequestMapping(value = "mobile-phone")
+@CrossOrigin("*")
 public class MobilePhoneController {
+
+    @Autowired
+    DozerBeanMapper dozerBeanMapper;
+
+    @Autowired
+    MobilePhoneService mobilePhoneService;
+
+    @RequestMapping(value = "create", method = RequestMethod.POST)
+    public ServiceResponse create(@RequestBody MobilePhoneDto mobilePhoneDto) {
+        return mobilePhoneService.create(mobilePhoneDto);
+    }
+
+    @RequestMapping(value = "load-all-group", method = RequestMethod.POST)
+    public ServiceResponse loadAllAsGroups() {
+        return mobilePhoneService.loadAllAsGroups();
+    }
+
+    @RequestMapping(value = "load-all", method = RequestMethod.GET)
+    public ServiceResponse loadAll() {
+        return mobilePhoneService.loadAll();
+    }
 }
