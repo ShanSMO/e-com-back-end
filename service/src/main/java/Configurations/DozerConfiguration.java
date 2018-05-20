@@ -1,12 +1,11 @@
 package Configurations;
 
-import Dtos.CategoryDto;
-import Dtos.ProductDto;
-import Entities.Category;
-import Entities.Product;
+import Dtos.*;
+import Entities.*;
 import org.dozer.DozerBeanMapper;
 import org.dozer.loader.DozerBuilder;
 import org.dozer.loader.api.BeanMappingBuilder;
+import org.dozer.loader.api.FieldsMappingOption;
 import org.dozer.loader.api.TypeMappingOptions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,7 +38,12 @@ public class DozerConfiguration{
             protected void configure() {
                   mapping(Category.class, CategoryDto.class, mapId("CAT_EXCLUDE_PRODUCT"), mapNull()).exclude("product");
                   mapping(Product.class, ProductDto.class, mapId("PRODUCT_EXCLUDE_CAT"), mapNull()).exclude("category");
-
+                  mapping(MobilePhoneDto.class, MobilePhone.class , mapId("MOBILE_PHONE"))
+                          .fields("categoryDto","category")
+                          .fields("brandDto","brand")
+                          .fields("modelDto","model");
+                  mapping(PhotoCopyDto.class, PhotoCopy.class, mapId("PHOTO_COPY"))
+                          .fields("categoryDto","category");
             }
         };
     }

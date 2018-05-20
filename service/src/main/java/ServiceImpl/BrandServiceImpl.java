@@ -1,5 +1,6 @@
 package ServiceImpl;
 
+import Dtos.BrandDto;
 import Entities.Brand;
 import Repositories.BrandRepository;
 import ServiceResponses.ServiceResponse;
@@ -26,32 +27,34 @@ public class BrandServiceImpl implements BrandService{
     BrandRepository brandRepository;
 
     @Override
-    public ServiceResponse create(Brand brand) {
+    public ServiceResponse create(BrandDto brandDto) {
         return null;
     }
 
     @Override
-    public ServiceResponse update(Brand brand) {
+    public ServiceResponse update(BrandDto brandDto) {
         return null;
     }
 
     @Override
     public ServiceResponse loadAll() {
+        ServiceResponse serviceResponse = new ServiceResponse();
+        serviceResponse.setObjects(brandRepository.findAll());
+        return serviceResponse;
+    }
+
+    @Override
+    public ServiceResponse loadById(BrandDto brandDto) {
         return null;
     }
 
     @Override
-    public ServiceResponse loadById(Brand brand) {
+    public ServiceResponse remove(BrandDto brandDto) {
         return null;
     }
 
     @Override
-    public ServiceResponse remove(Brand brand) {
-        return null;
-    }
-
-    @Override
-    public ServiceResponse changeStatus(Brand brand) {
+    public ServiceResponse changeStatus(BrandDto brandDto) {
         return null;
     }
 }

@@ -1,5 +1,6 @@
 package Services;
 
+import Dtos.BrandDto;
 import Entities.Brand;
 import ServiceResponses.ServiceResponse;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface BrandService {
 
-    ServiceResponse create(Brand brand);
-    ServiceResponse update(Brand brand);
+    ServiceResponse create(BrandDto brandDto);
+    ServiceResponse update(BrandDto brandDto);
     ServiceResponse loadAll();
-    ServiceResponse loadById(Brand brand);
-    ServiceResponse remove(Brand brand);
-    ServiceResponse changeStatus(Brand brand);
+    ServiceResponse loadById(BrandDto brandDto);
+    ServiceResponse remove(BrandDto brandDto);
+    ServiceResponse changeStatus(BrandDto brandDto);
 }

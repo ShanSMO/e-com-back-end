@@ -1,5 +1,6 @@
 package Services;
 
+import Dtos.ModelDto;
 import Entities.Model;
 import ServiceResponses.ServiceResponse;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface ModelService {
 
-    ServiceResponse create(Model model);
-    ServiceResponse update(Model model);
+    ServiceResponse create(ModelDto modelDto);
+    ServiceResponse update(ModelDto modelDto);
     ServiceResponse loadAll();
-    ServiceResponse loadAllForBrand(Model model);
-    ServiceResponse remove(Model model);
-    ServiceResponse changeStatus(Model model);
+    ServiceResponse loadAllForBrand(ModelDto modelDto);
+    ServiceResponse remove(ModelDto modelDto);
+    ServiceResponse changeStatus(ModelDto modelDto);
 }

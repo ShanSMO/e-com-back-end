@@ -1,6 +1,7 @@
 package ServiceImpl;
 
 import Dtos.MobilePhoneDto;
+import Entities.MobilePhone;
 import Repositories.MobilePhoneRepository;
 import ServiceResponses.ServiceResponse;
 import Services.MobilePhoneService;
@@ -27,7 +28,14 @@ public class MobilePhoneServiceImpl implements MobilePhoneService{
 
     @Override
     public ServiceResponse create(MobilePhoneDto mobilePhoneDto) {
-        return null;
+        ServiceResponse serviceResponse = new ServiceResponse();
+        try {
+            mobilePhoneRepository.saveAndFlush(dozerBeanMapper.map(mobilePhoneDto, MobilePhone.class,"MOBILE_PHONE"));
+            serviceResponse.setStatus(true);
+        } catch (Exception ignored) {
+            serviceResponse.setStatus(false);
+        }
+        return serviceResponse;
     }
 
     @Override
@@ -42,6 +50,18 @@ public class MobilePhoneServiceImpl implements MobilePhoneService{
 
     @Override
     public ServiceResponse loadAll() {
+        ServiceResponse serviceResponse = new ServiceResponse();
+        try {
+            serviceResponse.setStatus(true);
+            serviceResponse.setObjects(mobilePhoneRepository.findAll());
+        } catch (Exception ignored) {
+            serviceResponse.setStatus(false);
+        }
+        return serviceResponse;
+    }
+
+    @Override
+    public ServiceResponse loadAllAsGroups() {
         return null;
     }
 
