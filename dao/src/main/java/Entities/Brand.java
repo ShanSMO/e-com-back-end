@@ -1,5 +1,7 @@
 package Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -13,6 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tbl_brand")
+@JsonIgnoreProperties({"mobilePhones", "models"})
 public class Brand {
 
     @Id
@@ -23,10 +26,10 @@ public class Brand {
     @Column(name = "name")
     private String brandName;
 
-    @OneToMany(mappedBy = "brand")
-    private Set<MobilePhone> mobilePhone;
+    @OneToMany(mappedBy = "brand", fetch = FetchType.LAZY , cascade = CascadeType.DETACH)
+    private Set<MobilePhone> mobilePhones;
 
-    @OneToMany(mappedBy = "brand")
+    @OneToMany(mappedBy = "brand", fetch = FetchType.LAZY)
     private Set<Model> models;
 
     public long getId() {
@@ -45,12 +48,12 @@ public class Brand {
         this.brandName = brandName;
     }
 
-    public Set<MobilePhone> getMobilePhone() {
-        return mobilePhone;
+    public Set<MobilePhone> getMobilePhones() {
+        return mobilePhones;
     }
 
-    public void setMobilePhone(Set<MobilePhone> mobilePhone) {
-        this.mobilePhone = mobilePhone;
+    public void setMobilePhones(Set<MobilePhone> mobilePhones) {
+        this.mobilePhones = mobilePhones;
     }
 
     public Set<Model> getModels() {

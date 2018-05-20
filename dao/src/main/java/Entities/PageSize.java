@@ -1,5 +1,7 @@
 package Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -13,6 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tbl_page_size")
+@JsonIgnoreProperties({"photoCopies"})
 public class PageSize {
 
     @Id
@@ -24,7 +27,7 @@ public class PageSize {
     private String sizeValue;
 
     @OneToMany(mappedBy = "pageSize")
-    private Set<PhotoCopy> photoCopy;
+    private Set<PhotoCopy> photoCopies;
 
     public long getId() {
         return id;
@@ -42,11 +45,11 @@ public class PageSize {
         this.sizeValue = sizeValue;
     }
 
-    public Set<PhotoCopy> getPhotoCopy() {
-        return photoCopy;
+    public Set<PhotoCopy> getPhotoCopies() {
+        return photoCopies;
     }
 
-    public void setPhotoCopy(Set<PhotoCopy> photoCopy) {
-        this.photoCopy = photoCopy;
+    public void setPhotoCopies(Set<PhotoCopy> photoCopies) {
+        this.photoCopies = photoCopies;
     }
 }

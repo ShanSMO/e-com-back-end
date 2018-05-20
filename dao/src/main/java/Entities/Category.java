@@ -1,5 +1,8 @@
 package Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.context.annotation.Lazy;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -13,6 +16,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tbl_category")
+@JsonIgnoreProperties({"product","mobilePhones","photoCopies"})
 public class Category {
 
     @Id
@@ -26,13 +30,13 @@ public class Category {
     @Column(name = "code")
     private String code;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
     private Set<Product> product;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
     private Set<MobilePhone> mobilePhones;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
     private Set<PhotoCopy> photoCopies;
 
 

@@ -1,5 +1,6 @@
 package Entities;
 
+import Enums.PrintType;
 import Enums.PrintingMedium;
 import Enums.PrintingSides;
 
@@ -26,18 +27,25 @@ public class PhotoCopy {
     @JoinColumn(name = "page_size")
     private PageSize pageSize;
 
-    @Column(name = "unit_price")
-    private double unitPirce;
+    @Column(name = "single_side_color_price")
+    private double singleSideColorPrice;
 
-    @Column(name = "printing_side")
-    private PrintingSides printingSide = PrintingSides.SINGLE_SIDE;
+    @Column(name = "single_side_black_price")
+    private double singleSideBlackPrice;
 
-    @Column(name = "printing_medium")
-    private PrintingMedium printingMedium = PrintingMedium.BLACK_AND_WHITE;
+    @Column(name = "double_side_color_price")
+    private double doubleSideColorPrice;
+
+    @Column(name = "double_side_black_price")
+    private double doubleSideBlackPrice;
 
     @ManyToOne
     @JoinColumn(name = "category")
     private Category category;
+
+    @Column(name = "type")
+    @Enumerated
+    private PrintType printType = PrintType.PHOTO_COPY;
 
 
     public long getId() {
@@ -56,35 +64,51 @@ public class PhotoCopy {
         this.pageSize = pageSize;
     }
 
-    public double getUnitPirce() {
-        return unitPirce;
-    }
-
-    public void setUnitPirce(double unitPirce) {
-        this.unitPirce = unitPirce;
-    }
-
-    public PrintingSides getPrintingSide() {
-        return printingSide;
-    }
-
-    public void setPrintingSide(PrintingSides printingSide) {
-        this.printingSide = printingSide;
-    }
-
-    public PrintingMedium getPrintingMedium() {
-        return printingMedium;
-    }
-
-    public void setPrintingMedium(PrintingMedium printingMedium) {
-        this.printingMedium = printingMedium;
-    }
-
     public Category getCategory() {
         return category;
     }
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public PrintType getPrintType() {
+        return printType;
+    }
+
+    public void setPrintType(PrintType printType) {
+        this.printType = printType;
+    }
+
+    public double getSingleSideColorPrice() {
+        return singleSideColorPrice;
+    }
+
+    public void setSingleSideColorPrice(double singleSideColorPrice) {
+        this.singleSideColorPrice = singleSideColorPrice;
+    }
+
+    public double getSingleSideBlackPrice() {
+        return singleSideBlackPrice;
+    }
+
+    public void setSingleSideBlackPrice(double singleSideBlackPrice) {
+        this.singleSideBlackPrice = singleSideBlackPrice;
+    }
+
+    public double getDoubleSideColorPrice() {
+        return doubleSideColorPrice;
+    }
+
+    public void setDoubleSideColorPrice(double doubleSideColorPrice) {
+        this.doubleSideColorPrice = doubleSideColorPrice;
+    }
+
+    public double getDoubleSideBlackPrice() {
+        return doubleSideBlackPrice;
+    }
+
+    public void setDoubleSideBlackPrice(double doubleSideBlackPrice) {
+        this.doubleSideBlackPrice = doubleSideBlackPrice;
     }
 }

@@ -1,6 +1,7 @@
 package Dtos;
 
 import Entities.PageSize;
+import Enums.PrintType;
 import Enums.PrintingMedium;
 import Enums.PrintingSides;
 
@@ -16,10 +17,12 @@ public class PhotoCopyDto {
 
     private long id;
     private PageSize pageSize;
-    private double unitPirce;
-    private PrintingSides printingSide = PrintingSides.SINGLE_SIDE;
-    private PrintingMedium printingMedium = PrintingMedium.BLACK_AND_WHITE;
     private CategoryDto categoryDto;
+    private PrintType printType;
+    private double singleSideColorPrice;
+    private double singleSideBlackPrice;
+    private double doubleSideColorPrice;
+    private double doubleSideBlackPrice;
 
     public long getId() {
         return id;
@@ -37,35 +40,51 @@ public class PhotoCopyDto {
         this.pageSize = pageSize;
     }
 
-    public double getUnitPirce() {
-        return unitPirce;
-    }
-
-    public void setUnitPirce(double unitPirce) {
-        this.unitPirce = unitPirce;
-    }
-
-    public PrintingSides getPrintingSide() {
-        return printingSide;
-    }
-
-    public void setPrintingSide(PrintingSides printingSide) {
-        this.printingSide = printingSide;
-    }
-
-    public PrintingMedium getPrintingMedium() {
-        return printingMedium;
-    }
-
-    public void setPrintingMedium(PrintingMedium printingMedium) {
-        this.printingMedium = printingMedium;
-    }
-
     public CategoryDto getCategoryDto() {
         return categoryDto;
     }
 
     public void setCategoryDto(CategoryDto categoryDto) {
         this.categoryDto = categoryDto;
+    }
+
+    public PrintType getPrintType() {
+        return printType;
+    }
+
+    public void setPrintType(PrintType printType) {
+        this.printType = printType;
+    }
+
+    public double getSingleSideColorPrice() {
+        return singleSideColorPrice;
+    }
+
+    public void setSingleSideColorPrice(double singleSideColorPrice) {
+        this.singleSideColorPrice = singleSideColorPrice;
+    }
+
+    public double getSingleSideBlackPrice() {
+        return singleSideBlackPrice;
+    }
+
+    public void setSingleSideBlackPrice(double singleSideBlackPrice) {
+        this.singleSideBlackPrice = singleSideBlackPrice;
+    }
+
+    public double getDoubleSideColorPrice() {
+        return doubleSideColorPrice;
+    }
+
+    public void setDoubleSideColorPrice(double doubleSideColorPrice) {
+        this.doubleSideColorPrice = doubleSideColorPrice;
+    }
+
+    public double getDoubleSideBlackPrice() {
+        return doubleSideBlackPrice;
+    }
+
+    public void setDoubleSideBlackPrice(double doubleSideBlackPrice) {
+        this.doubleSideBlackPrice = doubleSideBlackPrice;
     }
 }

@@ -1,8 +1,12 @@
 package Repositories;
 
+import Entities.Brand;
 import Entities.Model;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Shanaka Madushanka .
@@ -13,5 +17,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface ModelRepository extends JpaRepository<Model, Long> {
+public interface ModelRepository extends JpaRepository<Model, Long> , Serializable{
+
+    List<Model> findByBrand_Id(long id);
 }

@@ -1,5 +1,7 @@
 package Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -13,6 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tbl_model")
+@JsonIgnoreProperties({"mobilePhone","brand"})
 public class Model {
 
     @Id
@@ -23,7 +26,7 @@ public class Model {
     @Column(name = "name")
     private String modelId;
 
-    @OneToMany(mappedBy = "model")
+    @OneToMany(mappedBy = "model", fetch = FetchType.EAGER)
     private Set<MobilePhone> mobilePhone;
 
     @ManyToOne
