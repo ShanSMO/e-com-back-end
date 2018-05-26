@@ -22,9 +22,6 @@ import org.springframework.web.bind.annotation.*;
 public class MobilePhoneController {
 
     @Autowired
-    DozerBeanMapper dozerBeanMapper;
-
-    @Autowired
     MobilePhoneService mobilePhoneService;
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
@@ -40,5 +37,10 @@ public class MobilePhoneController {
     @RequestMapping(value = "load-all", method = RequestMethod.GET)
     public ServiceResponse loadAll() {
         return mobilePhoneService.loadAll();
+    }
+
+    @RequestMapping(value = "load-by-barcode")
+    public ServiceResponse loadByBarcode(@RequestBody MobilePhoneDto mobilePhoneDto) {
+        return mobilePhoneService.loadByBarcode(mobilePhoneDto);
     }
 }
