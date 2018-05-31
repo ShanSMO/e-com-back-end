@@ -1,5 +1,8 @@
 package Entities;
 
+import Enums.AvailableStatus;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 /**
@@ -12,12 +15,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tbl_mobile_phone")
+@JsonIgnoreProperties({"leaseMobile","salesMobilePhone"})
 public class MobilePhone {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private long id;
+
+    @Column(name = "barcode")
+    private String barcode;
 
     @ManyToOne
     @JoinColumn(name = "brand")
@@ -45,6 +52,16 @@ public class MobilePhone {
     @ManyToOne
     @JoinColumn(name = "category")
     private Category category;
+
+    @OneToOne(mappedBy = "mobilePhone")
+    private LeaseMobile leaseMobile;
+
+    @OneToOne(mappedBy = "mobilePhone")
+    private SalesMobilePhone salesMobilePhone;
+
+    @Column(name = "availability")
+    @Enumerated
+    private AvailableStatus availableStatus = AvailableStatus.AVAILABLE;
 
 
     public long getId() {
@@ -117,5 +134,37 @@ public class MobilePhone {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public LeaseMobile getLeaseMobile() {
+        return leaseMobile;
+    }
+
+    public void setLeaseMobile(LeaseMobile leaseMobile) {
+        this.leaseMobile = leaseMobile;
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public SalesMobilePhone getSalesMobilePhone() {
+        return salesMobilePhone;
+    }
+
+    public void setSalesMobilePhone(SalesMobilePhone salesMobilePhone) {
+        this.salesMobilePhone = salesMobilePhone;
+    }
+
+    public AvailableStatus getAvailableStatus() {
+        return availableStatus;
+    }
+
+    public void setAvailableStatus(AvailableStatus availableStatus) {
+        this.availableStatus = availableStatus;
     }
 }

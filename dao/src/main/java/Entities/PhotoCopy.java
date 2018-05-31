@@ -15,7 +15,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "tbl_photo_copy")
+@Table(name = "tbl_photo_copy", uniqueConstraints = {@UniqueConstraint(columnNames = {"page_size"})})
 public class PhotoCopy {
 
     @Id

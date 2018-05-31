@@ -1,6 +1,8 @@
 package Dtos;
 
 
+import Enums.BrandType;
+
 import java.util.Set;
 
 /**
@@ -17,6 +19,7 @@ public class BrandDto {
     private String brandName;
     private Set<MobilePhoneDto> mobilePhoneDtos;
     private Set<ModelDto> modelDtos;
+    private BrandType brandType;
 
     public long getId() {
         return id;
@@ -49,5 +52,13 @@ public class BrandDto {
 
     public void setModelDtos(Set<ModelDto> modelDtos) {
         this.modelDtos = modelDtos;
+    }
+
+    public BrandType getBrandType() {
+        return brandType;
+    }
+
+    public void setBrandType(BrandType brandType) {
+        this.brandType = brandType;
     }
 }

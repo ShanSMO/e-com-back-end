@@ -15,7 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tbl_page_size")
-@JsonIgnoreProperties({"photoCopies"})
+@JsonIgnoreProperties({"photoCopies", "salesPhotocopySet"})
 public class PageSize {
 
     @Id
@@ -28,6 +28,9 @@ public class PageSize {
 
     @OneToMany(mappedBy = "pageSize")
     private Set<PhotoCopy> photoCopies;
+
+    @OneToMany(mappedBy = "pageSize")
+    private Set<SalesPhotocopy> salesPhotocopySet;
 
     public long getId() {
         return id;
@@ -51,5 +54,13 @@ public class PageSize {
 
     public void setPhotoCopies(Set<PhotoCopy> photoCopies) {
         this.photoCopies = photoCopies;
+    }
+
+    public Set<SalesPhotocopy> getSalesPhotocopySet() {
+        return salesPhotocopySet;
+    }
+
+    public void setSalesPhotocopySet(Set<SalesPhotocopy> salesPhotocopySet) {
+        this.salesPhotocopySet = salesPhotocopySet;
     }
 }

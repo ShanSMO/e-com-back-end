@@ -1,6 +1,9 @@
 package Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by Shanaka Madushanka .
@@ -12,6 +15,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tbl_user")
+@JsonIgnoreProperties({"sellings","salesMobilePhones"})
 public class User {
 
     @Id
@@ -24,6 +28,12 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private Set<Selling> sellings;
+
+    @OneToMany(mappedBy = "user")
+    private Set<SalesMobilePhone> salesMobilePhones;
 
     public long getId() {
         return id;
@@ -47,5 +57,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Selling> getSellings() {
+        return sellings;
+    }
+
+    public void setSellings(Set<Selling> sellings) {
+        this.sellings = sellings;
+    }
+
+    public Set<SalesMobilePhone> getSalesMobilePhones() {
+        return salesMobilePhones;
+    }
+
+    public void setSalesMobilePhones(Set<SalesMobilePhone> salesMobilePhones) {
+        this.salesMobilePhones = salesMobilePhones;
     }
 }

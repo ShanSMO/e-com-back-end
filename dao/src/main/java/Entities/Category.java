@@ -16,7 +16,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tbl_category")
-@JsonIgnoreProperties({"product","mobilePhones","photoCopies"})
+@JsonIgnoreProperties({"product","mobilePhones","photoCopies","sellings","leaseMobiles"})
 public class Category {
 
     @Id
@@ -38,6 +38,12 @@ public class Category {
 
     @OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
     private Set<PhotoCopy> photoCopies;
+
+    @OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
+    private Set<Selling> sellings;
+
+    @OneToMany(mappedBy = "category")
+    private Set<LeaseMobile> leaseMobiles;
 
 
     public long getId() {
@@ -86,5 +92,21 @@ public class Category {
 
     public void setPhotoCopies(Set<PhotoCopy> photoCopies) {
         this.photoCopies = photoCopies;
+    }
+
+    public Set<Selling> getSellings() {
+        return sellings;
+    }
+
+    public void setSellings(Set<Selling> sellings) {
+        this.sellings = sellings;
+    }
+
+    public Set<LeaseMobile> getLeaseMobiles() {
+        return leaseMobiles;
+    }
+
+    public void setLeaseMobiles(Set<LeaseMobile> leaseMobiles) {
+        this.leaseMobiles = leaseMobiles;
     }
 }

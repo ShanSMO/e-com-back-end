@@ -1,5 +1,7 @@
 package Dtos;
 
+import Enums.AvailableStatus;
+
 /**
  * Created by Shanaka Madushanka .
  * Created Date -  5/18/2018
@@ -11,6 +13,7 @@ package Dtos;
 public class MobilePhoneDto {
 
     private long id;
+    private String barcode;
     private BrandDto brandDto;
     private ModelDto modelDto;
     private String imei;
@@ -19,6 +22,9 @@ public class MobilePhoneDto {
     private double profitMargin;
     private double discount;
     private CategoryDto categoryDto;
+    private LeaseMobileDto leaseMobileDto;
+    private SalesMobilePhoneDto salesMobilePhoneDto;
+    private AvailableStatus availableStatus = AvailableStatus.AVAILABLE;
 
     public long getId() {
         return id;
@@ -90,5 +96,37 @@ public class MobilePhoneDto {
 
     public void setCategoryDto(CategoryDto categoryDto) {
         this.categoryDto = categoryDto;
+    }
+
+    public LeaseMobileDto getLeaseMobileDto() {
+        return leaseMobileDto;
+    }
+
+    public void setLeaseMobileDto(LeaseMobileDto leaseMobileDto) {
+        this.leaseMobileDto = leaseMobileDto;
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public SalesMobilePhoneDto getSalesMobilePhoneDto() {
+        return salesMobilePhoneDto;
+    }
+
+    public void setSalesMobilePhoneDto(SalesMobilePhoneDto salesMobilePhoneDto) {
+        this.salesMobilePhoneDto = salesMobilePhoneDto;
+    }
+
+    public AvailableStatus getAvailableStatus() {
+        return availableStatus;
+    }
+
+    public void setAvailableStatus(AvailableStatus availableStatus) {
+        this.availableStatus = availableStatus;
     }
 }

@@ -1,8 +1,11 @@
 package Repositories;
 
 import Entities.MobilePhone;
+import Enums.AvailableStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Created by Shanaka Madushanka .
@@ -14,4 +17,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MobilePhoneRepository extends JpaRepository<MobilePhone, Long>{
+
+    MobilePhone findMobilePhoneByBarcode(String barcode);
+    List<MobilePhone> findMobilePhoneByAvailableStatus(AvailableStatus status);
+    int countAllByAvailableStatus(AvailableStatus availableStatus);
 }

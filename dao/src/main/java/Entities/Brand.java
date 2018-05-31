@@ -1,5 +1,6 @@
 package Entities;
 
+import Enums.BrandType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -25,6 +26,10 @@ public class Brand {
 
     @Column(name = "name")
     private String brandName;
+
+    @Column(name = "type")
+    @Enumerated
+    private BrandType brandType;
 
     @OneToMany(mappedBy = "brand", fetch = FetchType.LAZY , cascade = CascadeType.DETACH)
     private Set<MobilePhone> mobilePhones;
@@ -62,5 +67,13 @@ public class Brand {
 
     public void setModels(Set<Model> models) {
         this.models = models;
+    }
+
+    public BrandType getBrandType() {
+        return brandType;
+    }
+
+    public void setBrandType(BrandType brandType) {
+        this.brandType = brandType;
     }
 }

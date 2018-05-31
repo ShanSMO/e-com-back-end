@@ -1,5 +1,6 @@
 package Configurations;
 
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -11,7 +12,10 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -43,7 +47,6 @@ public class ORMConfiguration {
 
     @Bean
     public Properties hibernateProperties(Environment env){
-        System.out.println("-------- hibernateProperties ----");
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect",env.getProperty("hibernate.dialect"));
         properties.setProperty("hibernate.show_sql",env.getProperty("hibernate.show_sql"));
@@ -54,8 +57,6 @@ public class ORMConfiguration {
 
     @Bean
     public DataSource dataSource(Environment env){
-        System.out.println("-------- dataSource ----");
-
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(env.getProperty("db.driver"));
         dataSource.setUsername(env.getProperty("db.user_name"));
@@ -66,8 +67,6 @@ public class ORMConfiguration {
 
     @Bean
     public PlatformTransactionManager transactionManagerRef(EntityManagerFactory entityManagerFactory){
-        System.out.println("-------- transactionManagerRef ----");
-
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return transactionManager;

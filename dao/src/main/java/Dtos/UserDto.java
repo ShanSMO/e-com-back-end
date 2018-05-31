@@ -1,5 +1,7 @@
 package Dtos;
 
+import java.util.Set;
+
 /**
  * Created by Shanaka Madushanka .
  * Created Date -  5/14/2018
@@ -13,6 +15,7 @@ public class UserDto {
     private long id;
     private String userName;
     private String password;
+    private Set<SalesMobilePhoneDto> salesMobilePhoneDtos;
 
     public long getId() {
         return id;
@@ -36,5 +39,13 @@ public class UserDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<SalesMobilePhoneDto> getSalesMobilePhoneDtos() {
+        return salesMobilePhoneDtos;
+    }
+
+    public void setSalesMobilePhoneDtos(Set<SalesMobilePhoneDto> salesMobilePhoneDtos) {
+        this.salesMobilePhoneDtos = salesMobilePhoneDtos;
     }
 }
