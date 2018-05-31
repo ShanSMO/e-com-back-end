@@ -39,6 +39,11 @@ public class MobilePhoneController {
         return mobilePhoneService.loadAll();
     }
 
+    @RequestMapping(value = "load-all-available", method = RequestMethod.GET)
+    public ServiceResponse loadAllAvailable() {
+        return mobilePhoneService.loadAllInStock();
+    }
+
     @RequestMapping(value = "load-by-barcode")
     public ServiceResponse loadByBarcode(@RequestBody MobilePhoneDto mobilePhoneDto) {
         return mobilePhoneService.loadByBarcode(mobilePhoneDto);

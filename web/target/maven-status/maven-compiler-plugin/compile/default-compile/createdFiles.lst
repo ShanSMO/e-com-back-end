@@ -1,6 +1,0 @@
-WebService\UserController.class
-Configuration\ConfigInit.class
-Configuration\WebConfiguration.class
-Configuration\RootConfiguration.class
-RequestObjects\RequestObject.class
-ResponseObjects\ResponseObject.class

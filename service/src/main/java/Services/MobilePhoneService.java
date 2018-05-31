@@ -17,9 +17,12 @@ public interface MobilePhoneService {
 
     ServiceResponse create(MobilePhoneDto mobilePhoneDto);
     ServiceResponse update(MobilePhoneDto mobilePhoneDto);
+    ServiceResponse updateAvailability(MobilePhoneDto mobilePhoneDto);
     ServiceResponse loadById(MobilePhoneDto mobilePhoneDto);
     ServiceResponse loadAll();
+    ServiceResponse loadAllInStock();
     ServiceResponse loadAllAsGroups();
     ServiceResponse changeStatus();
     ServiceResponse remove(MobilePhoneDto mobilePhoneDto);
+    ServiceResponse loadByBarcode(MobilePhoneDto mobilePhoneDto);
 }

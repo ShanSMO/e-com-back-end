@@ -15,6 +15,7 @@
         <module>mail</module>
         <module>dao</module>
         <module>security</module>
+        <module>report</module>
     </modules>
 
 </project>
