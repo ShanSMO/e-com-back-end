@@ -1,5 +1,7 @@
 package Dtos;
 
+import Enums.DeductionType;
+
 import java.util.Date;
 
 /**
@@ -17,6 +19,13 @@ public class LeaseMobileDto {
     private CategoryDto category;
     private MobilePhoneDto mobilePhone;
     private CustomerDto customerDto;
+    private GuaranteesDto guaranteesDto1;
+    private GuaranteesDto guaranteesDto2;
+    private double downPayment;
+    private double remainBalance;
+    private DeductionType deductionType;
+    private double interestRate;
+
 
     public long getId() {
         return id;
@@ -56,5 +65,53 @@ public class LeaseMobileDto {
 
     public void setCustomerDto(CustomerDto customerDto) {
         this.customerDto = customerDto;
+    }
+
+    public GuaranteesDto getGuaranteesDto1() {
+        return guaranteesDto1;
+    }
+
+    public void setGuaranteesDto1(GuaranteesDto guaranteesDto1) {
+        this.guaranteesDto1 = guaranteesDto1;
+    }
+
+    public GuaranteesDto getGuaranteesDto2() {
+        return guaranteesDto2;
+    }
+
+    public void setGuaranteesDto2(GuaranteesDto guaranteesDto2) {
+        this.guaranteesDto2 = guaranteesDto2;
+    }
+
+    public double getDownPayment() {
+        return downPayment;
+    }
+
+    public void setDownPayment(double downPayment) {
+        this.downPayment = downPayment;
+    }
+
+    public double getRemainBalance() {
+        return remainBalance;
+    }
+
+    public void setRemainBalance(double remainBalance) {
+        this.remainBalance = remainBalance;
+    }
+
+    public DeductionType getDeductionType() {
+        return deductionType;
+    }
+
+    public void setDeductionType(DeductionType deductionType) {
+        this.deductionType = deductionType;
+    }
+
+    public double getInterestRate() {
+        return interestRate;
+    }
+
+    public void setInterestRate(double interestRate) {
+        this.interestRate = interestRate;
     }
 }

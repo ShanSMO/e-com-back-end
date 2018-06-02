@@ -7,16 +7,15 @@ import java.util.List;
 
 /**
  * Created by Shanaka Madushanka .
- * Created Date -  5/25/2018
- * Created Time -  10:45 PM
+ * Created Date -  5/31/2018
+ * Created Time -  9:55 PM
  * Project Name - e-com-back-end
  * Package Name - Entities
  */
-
 @Entity
-@Table(name = "tbl_customer")
-@JsonIgnoreProperties({"customer"})
-public class Customer {
+@Table(name = "tbl_guarantee")
+@JsonIgnoreProperties({"guarantee1", "guarantee2"})
+public class Guarantees {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,12 +28,18 @@ public class Customer {
     @Column(name = "phone")
     private String phone;
 
+    @Column(name = "nic")
+    private String nic;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address")
     private Address address;
 
-    @OneToMany(mappedBy = "customer")
-    private List<LeaseMobile> leaseMobile;
+    @OneToOne(mappedBy = "guarantee1")
+    private LeaseMobile leaseMobile;
+
+    @OneToOne(mappedBy = "guarantee2")
+    private LeaseMobile leaseMobile2;
 
     public long getId() {
         return id;
@@ -60,6 +65,14 @@ public class Customer {
         this.phone = phone;
     }
 
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
+    }
+
     public Address getAddress() {
         return address;
     }
@@ -68,11 +81,19 @@ public class Customer {
         this.address = address;
     }
 
-    public List<LeaseMobile> getLeaseMobile() {
+    public LeaseMobile getLeaseMobile() {
         return leaseMobile;
     }
 
-    public void setLeaseMobile(List<LeaseMobile> leaseMobile) {
+    public void setLeaseMobile(LeaseMobile leaseMobile) {
         this.leaseMobile = leaseMobile;
+    }
+
+    public LeaseMobile getLeaseMobile2() {
+        return leaseMobile2;
+    }
+
+    public void setLeaseMobile2(LeaseMobile leaseMobile2) {
+        this.leaseMobile2 = leaseMobile2;
     }
 }

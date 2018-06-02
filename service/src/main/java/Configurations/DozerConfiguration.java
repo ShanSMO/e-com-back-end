@@ -60,6 +60,19 @@ public class DozerConfiguration{
                         .fields("customerDto","customer");
                 mapping(SalesPhotocoptDto.class,SalesPhotocopy.class, mapId("SALES_PHOTO_COPY"))
                         .fields("pageSizeDto","pageSize");
+                mapping(CustomerDto.class,Customer.class, mapId("CUSTOMER_MAP"))
+                        .fields("addressDto","address")
+                        .fields("leaseMobileDtos","leaseMobile");
+                mapping(GuaranteesDto.class,Guarantees.class, mapId("GUARANTEE_MAP"))
+                        .fields("addressDto","address")
+                        .fields("leaseMobile2Dto","leaseMobile2")
+                        .fields("leaseMobileDto","leaseMobile");
+                mapping(LeaseMobileDto.class,LeaseMobile.class, mapId("LEASE_MOBILE_MAP"))
+                        .fields("category","category")
+                        .fields("mobilePhone","mobilePhone")
+                        .fields("customerDto","customer")
+                        .fields("guaranteesDto1","guarantee1", useMapId("GUARANTEE_MAP"))
+                        .fields("guaranteesDto2","guarantee2", useMapId("GUARANTEE_MAP"));
             }
         };
     }

@@ -2,6 +2,8 @@ package WebService;
 
 import Dtos.LeaseMobileDto;
 import ServiceResponses.ServiceResponse;
+import Services.LeaseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -17,8 +19,11 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin("*")
 public class LeaseController {
 
+    @Autowired
+    LeaseService leaseService;
+
     @RequestMapping(value = "phone", method = RequestMethod.POST)
     public ServiceResponse leaseMobile(@RequestBody LeaseMobileDto leaseMobileDto) {
-        return null;
+        return leaseService.leaseMobile(leaseMobileDto);
     }
 }

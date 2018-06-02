@@ -1,22 +1,22 @@
 package Dtos;
 
-import java.util.List;
-
 /**
  * Created by Shanaka Madushanka .
- * Created Date -  5/25/2018
- * Created Time -  10:52 PM
+ * Created Date -  5/31/2018
+ * Created Time -  10:00 PM
  * Project Name - e-com-back-end
  * Package Name - Dtos
  */
 
-public class CustomerDto {
+public class GuaranteesDto {
 
     private long id;
     private String fullName;
     private String phone;
+    private String nic;
     private AddressDto addressDto;
-    private List<LeaseMobileDto> leaseMobileDtos ;
+    private LeaseMobileDto leaseMobileDto;
+    private LeaseMobileDto leaseMobile2Dto;
 
     public long getId() {
         return id;
@@ -42,6 +42,14 @@ public class CustomerDto {
         this.phone = phone;
     }
 
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
+    }
+
     public AddressDto getAddressDto() {
         return addressDto;
     }
@@ -50,11 +58,19 @@ public class CustomerDto {
         this.addressDto = addressDto;
     }
 
-    public List<LeaseMobileDto> getLeaseMobileDtos() {
-        return leaseMobileDtos;
+    public LeaseMobileDto getLeaseMobileDto() {
+        return leaseMobileDto;
     }
 
-    public void setLeaseMobileDtos(List<LeaseMobileDto> leaseMobileDtos) {
-        this.leaseMobileDtos = leaseMobileDtos;
+    public void setLeaseMobileDto(LeaseMobileDto leaseMobileDto) {
+        this.leaseMobileDto = leaseMobileDto;
+    }
+
+    public LeaseMobileDto getLeaseMobile2Dto() {
+        return leaseMobile2Dto;
+    }
+
+    public void setLeaseMobile2Dto(LeaseMobileDto leaseMobile2Dto) {
+        this.leaseMobile2Dto = leaseMobile2Dto;
     }
 }
