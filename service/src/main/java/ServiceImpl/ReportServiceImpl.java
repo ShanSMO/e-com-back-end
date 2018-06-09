@@ -1,11 +1,14 @@
 package ServiceImpl;
 
+import Entities.PhotoCopy;
 import Repositories.MobilePhoneSalesRepository;
 import Repositories.PhotoCopySalesRepository;
 import Services.ReportService;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by Shanaka Madushanka .
@@ -28,4 +31,8 @@ public class ReportServiceImpl implements ReportService {
     DozerBeanMapper dozerBeanMapper;
 
 
+    @Override
+    public List<PhotoCopy> photocopySalesList() {
+        return null;
+    }
 }
