@@ -16,6 +16,7 @@
         <module>dao</module>
         <module>security</module>
         <module>report</module>
+        <module>schedule</module>
     </modules>
 
 </project>
